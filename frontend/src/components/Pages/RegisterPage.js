@@ -14,6 +14,8 @@ const RegisterPage = () => {
             password: password
         };
         console.log(data);
+
+        // Network Integration
     }
 
     return (
