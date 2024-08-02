@@ -12,3 +12,13 @@ export const LoginUser = async (data) => {
         console.log("Error\n", error);
     }
 }
+
+export const RegisterUser = async (data) => {
+
+    try {
+        const response = await axios.post(`${api_url}/api/Auth/Register`, data);
+        return response.data;
+    } catch (error) {
+        console.log("Error\n", error);
+    }
+}

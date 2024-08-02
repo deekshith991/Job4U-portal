@@ -41,8 +41,8 @@ router.post("/Register", async (req, res) => {
 
     if (existing_user) {
       return res
-        .status(500)
-        .json({ status: "failed", message: "User already Exist's" });
+        .json({ status: "failed", message: "User already Exist's" })
+        .status(401);
     }
 
     const User = new Users({ account, email, password });
@@ -55,13 +55,15 @@ router.post("/Register", async (req, res) => {
       Uid: User._id,
       email: User.email,
     });
+
   } catch (error) {
     console.log("Error :");
     console.log(error);
     return res
-      .status(500)
-      .json({ status: "failed", message: "Error at server" });
+      .json({ status: "failed", message: "Error at server" })
+      .status(401);
   }
 });
+
 
 module.exports = router;

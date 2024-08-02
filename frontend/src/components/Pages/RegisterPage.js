@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { RegisterUser } from "../services.js/AuthService";
 
 const RegisterPage = () => {
     const [account, setaccount] = useState("JobSeeker");
@@ -16,6 +17,9 @@ const RegisterPage = () => {
         console.log(data);
 
         // Network Integration
+
+        const Resp = await RegisterUser(data);
+        console.log(Resp);
     }
 
     return (
