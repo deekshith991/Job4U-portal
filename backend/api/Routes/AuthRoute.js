@@ -21,8 +21,8 @@ router.post("/Login", async (req, res) => {
       });
     } else {
       return res
-        .status(500)
-        .json({ status: "failed", message: "User Credential's Invalid" });
+        .json({ status: "failed", message: "User Credential's Invalid" })
+        .status(401);
     }
   } catch (error) {
     console.log("Error");

@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { LoginUser } from "../services.js/AuthService";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
 
     const data = {
@@ -12,10 +13,13 @@ const LoginPage = () => {
       password: password,
     };
 
-    console.log("Login page submit");
-    console.log(data);
-
     // Network Integration
+    const Resp = await LoginUser(data);
+    console.log(Resp);
+    console.log(Resp.status);
+
+    // console.log(JSON.stringify(Resp));
+
   };
 
   return (
