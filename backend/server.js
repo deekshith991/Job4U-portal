@@ -31,3 +31,6 @@ db.once("open", () => {
     console.log(`[+] API getway is ${port}`);
   });
 });
+
+const AuthRoute = require("./api/Routes/AuthRoute.js");
+app.use("/api/Auth", AuthRoute);
