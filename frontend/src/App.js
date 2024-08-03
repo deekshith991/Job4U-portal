@@ -5,6 +5,7 @@ import RegisterPage from './components/Pages/RegisterPage';
 function App() {
   return (
     <div className="App">
+      <LoginPage />
       <RegisterPage />
     </div>
   );

@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { LoginUser } from "../services.js/AuthService";
+import { useAuth } from "../services.js/AuthContext";
 
 const LoginPage = () => {
+
+  const { authData, setAuthData } = useAuth();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
