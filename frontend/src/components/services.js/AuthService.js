@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const api_url = 'http://localhost:3333';
+const api_url = "https://job4-u-portal.vercel.app/";
 
 export const ServerCheck = async () => {
     const navigate = useNavigate();
