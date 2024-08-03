@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { LoginUser } from "../services.js/AuthService";
+import { LoginUser, ServerCheck } from "../services.js/AuthService";
 import { useAuth } from "../services.js/AuthContext";
 import { Link } from "react-router-dom";
 import RegisterPage from "./RegisterPage";
 
 const LoginPage = () => {
+
+  ServerCheck();
 
   const { authData, setAuthData } = useAuth();
 

@@ -32,5 +32,9 @@ db.once("open", () => {
   });
 });
 
+app.get("/api/test", async (req, res) => {
+  return res.json({ status: "Online" }).status(200);
+});
+
 const AuthRoute = require("./api/Routes/AuthRoute.js");
 app.use("/api/Auth", AuthRoute);
