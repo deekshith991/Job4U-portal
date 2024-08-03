@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { LoginUser } from "../services.js/AuthService";
 import { useAuth } from "../services.js/AuthContext";
+import { Link } from "react-router-dom";
+import RegisterPage from "./RegisterPage";
 
 const LoginPage = () => {
 
@@ -57,7 +59,7 @@ const LoginPage = () => {
             Login
           </button>
         </form>
-        <h5>Don't have an Account Register</h5>
+        <h5>Don't have an Account <Link to="/register"> Register</Link></h5>
       </div>
     </div>
   );
