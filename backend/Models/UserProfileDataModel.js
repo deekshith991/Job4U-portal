@@ -28,4 +28,4 @@ const UserProfileDataSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model("userdata", UserProfileDataSchema);
+module.exports = mongoose.model("Userprofiles", UserProfileDataSchema);
