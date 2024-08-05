@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { LoginUser } from "../services.js/AuthService";
-import { useAuth } from "../services.js/AuthContext";
+import { LoginUser } from "../services/AuthService";
+import { useAuth } from "../services/AuthContext";
+
 import { Link } from "react-router-dom";
 import RegisterPage from "./RegisterPage";
 
