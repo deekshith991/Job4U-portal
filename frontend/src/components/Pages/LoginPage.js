@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { LoginUser } from "../services/AuthService";
 import { useAuth } from "../services/AuthContext";
-
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import RegisterPage from "./RegisterPage";
 
 const LoginPage = () => {
 
   const { authData, setAuthData } = useAuth();
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,6 +28,11 @@ const LoginPage = () => {
 
     if (Resp.status === "success") {
       alert("Loggin in");
+      setAuthData({ isLoggegIn: true, email: Resp.email, uid: Resp.uid });
+
+      console.log(authData);
+
+      navigate('/home');
     } else if (Resp.status === "failed") {
       alert(Resp.message);
     } else {

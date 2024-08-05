@@ -6,6 +6,7 @@ import Companydata from './components/Pages/CompanyData';
 import { useAuth } from './components/services/AuthContext';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './components/Pages/HomePage';
 
 
 
@@ -20,7 +21,9 @@ function App() {
 
         {authData.isLoggedIn ?
           //Logged In case Yes
-          <h1>logged In</h1>
+          <Routes>
+            <Route path='/home' element={<HomePage />} />
+          </Routes>
           :
 
           // Not Logged In case No
