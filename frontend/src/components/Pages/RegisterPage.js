@@ -1,5 +1,9 @@
 import { useState } from "react";
+
 import { RegisterUser } from "../services/AuthService";
+
+import { Link } from "react-router-dom";
+
 
 const RegisterPage = () => {
     const [account, setaccount] = useState("JobSeeker");
@@ -67,7 +71,7 @@ const RegisterPage = () => {
                     <button type="submit" className="RegisterBtn">Register</button>
 
                 </form>
-                <h5>Have an Account Login</h5>
+                <h5>Have an Account <Link to="/login"> Login </Link></h5>
             </div>
         </div>
     );

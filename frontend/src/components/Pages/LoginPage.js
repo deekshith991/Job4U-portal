@@ -1,7 +1,14 @@
 import { useState } from "react";
 import { LoginUser } from "../services/AuthService";
+import { useAuth } from "../services/AuthContext";
+
+import { Link } from "react-router-dom";
+import RegisterPage from "./RegisterPage";
 
 const LoginPage = () => {
+
+  const { authData, setAuthData } = useAuth();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -53,7 +60,7 @@ const LoginPage = () => {
             Login
           </button>
         </form>
-        <h5>Don't have an Account Register</h5>
+        <h5>Don't have an Account <Link to="/register"> Register</Link></h5>
       </div>
     </div>
   );
