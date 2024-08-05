@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { UserProfileUpdate } from "../services/UserService";
 
 
 const Userdata = () => {
+
+
 
     const [UserData, setUserData] = useState({
         firstName: "",
@@ -22,6 +25,16 @@ const Userdata = () => {
         e.preventDefault();
 
         console.log(UserData);
+
+        const resp = await UserProfileUpdate(UserData);
+
+        console.log(resp.status);
+        if (resp.status === "success") {
+            alert("Successfully updated");
+        } else {
+            alert("please use another mail for Registration");
+        }
+        console.log(resp);
     }
 
     return (
