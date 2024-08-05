@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 // for Jobseeker only User Only
 
 const UserProfileDataSchema = mongoose.Schema({
+    uid: {
+        type: mongoose.SchemaTypes.ObjectId
+    },
     firstName: {
         type: String
     },
@@ -25,4 +28,4 @@ const UserProfileDataSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.Model("UserData", UserProfileDataSchema);
+module.exports = mongoose.model("userdata", UserProfileDataSchema);
