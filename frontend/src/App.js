@@ -7,7 +7,7 @@ import Userdata from './components/Pages/UserData';
 function App() {
   return (
     <div className="App">
-      <Userdata />
+      <Companydata />
     </div>
   );
 }

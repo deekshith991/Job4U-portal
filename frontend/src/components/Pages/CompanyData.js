@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { CompanyProfileUpdate } from "../services/CompanyService";
 
 const Companydata = () => {
     const [CompanyData, setCompanyData] = useState({
@@ -19,7 +20,16 @@ const Companydata = () => {
 
         console.log(CompanyData);
 
-        alert("success");
+        const resp = await CompanyProfileUpdate(CompanyData);
+
+        if (resp.status === "success") {
+            alert("success");
+        }
+        else {
+            console.log(resp);
+            alert("Registration not done");
+        }
+
     }
 
     return (
