@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LoginUser, ServerCheck } from "../services.js/AuthService";
+import { LoginUser, ServerCheck } from "../services/AuthService";
 import { useAuth } from "../services.js/AuthContext";
 import { Link } from "react-router-dom";
 import RegisterPage from "./RegisterPage";
