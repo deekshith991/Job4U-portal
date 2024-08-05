@@ -35,5 +35,8 @@ db.once("open", () => {
 const AuthRoute = require("./api/Routes/AuthRoute.js");
 app.use("/api/Auth", AuthRoute);
 
+const CompanyProfileRoute = require('./api/Routes/CompanyProfileRoute.js');
+app.use("/api/companies", CompanyProfileRoute);
+
 const UserProfileRoute = require("./api/Routes/UserProfileRoute.js");
 app.use("/api/users", UserProfileRoute);
