@@ -25,6 +25,14 @@ const LoginPage = () => {
     console.log(Resp);
     console.log(Resp.status);
 
+    if (Resp.status === "success") {
+      alert("Loggin in");
+    } else if (Resp.status === "failed") {
+      alert(Resp.message);
+    } else {
+      alert("error");
+    }
+
     // console.log(JSON.stringify(Resp));
 
   };

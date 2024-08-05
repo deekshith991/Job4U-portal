@@ -1,11 +1,13 @@
 import { useState } from "react";
-
 import { RegisterUser } from "../services/AuthService";
-
 import { Link } from "react-router-dom";
+import { useAuth } from "../services/AuthContext";
 
 
 const RegisterPage = () => {
+
+    const { authData, setAuthData } = useAuth();
+
     const [account, setaccount] = useState("JobSeeker");
     const [email, setemail] = useState("");
     const [password, setpassword] = useState("");
@@ -24,6 +26,16 @@ const RegisterPage = () => {
 
         const Resp = await RegisterUser(data);
         console.log(Resp);
+
+        // redirection 
+        if (Resp.status === "success") {
+            alert("registering & redirecting");
+        } else if (Resp.status === "failed") {
+            alert(Resp.message);
+        } else {
+            alert("error");
+        }
+
     }
 
     return (

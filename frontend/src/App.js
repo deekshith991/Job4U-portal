@@ -3,7 +3,7 @@ import LoginPage from './components/Pages/LoginPage';
 import RegisterPage from './components/Pages/RegisterPage';
 import Userdata from './components/Pages/UserData';
 import Companydata from './components/Pages/CompanyData';
-import { useAuth } from './components/services.js/AuthContext';
+import { useAuth } from './components/services/AuthContext';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
