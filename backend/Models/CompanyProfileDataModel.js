@@ -1,8 +1,12 @@
 const mongoose = require("mongoose");
 
 const CompanyProfileSchema = mongoose.Schema({
+    uid: {
+        type: mongoose.SchemaTypes.ObjectId,
+    },
     name: {
         type: String,
+        require: true,
     },
     email: {
         type: String,
