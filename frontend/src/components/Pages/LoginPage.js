@@ -21,27 +21,26 @@ const LoginPage = () => {
       password: password,
     };
 
-    // Network Integration
-    const Resp = await LoginUser(data);
-    console.log(Resp);
-    console.log(Resp.status);
+    try {
+      // Network Integration
+      const Resp = await LoginUser(data);
 
-    if (Resp.status === "success") {
-      alert("Loggin in");
-      setAuthData({ isLoggegIn: true, email: Resp.email, uid: Resp.uid });
+      console.log(Resp);
 
-      console.log(authData);
+      if (Resp.success) {
 
-      navigate('/home');
-    } else if (Resp.status === "failed") {
-      alert(Resp.message);
-    } else {
-      alert("error");
+        alert("Logging in...");
+        setAuthData({ isLoggedIn: true, email: Resp.email, uid: Resp.uid });
+        navigate('/home');
+      } else {
+        alert(Resp.message || "An error occurred. Please try again.");
+      }
+    } catch (error) {
+      console.error("Login failed:", error);
+      alert("An unexpected error occurred. Please try again.");
     }
-
-    // console.log(JSON.stringify(Resp));
-
   };
+
 
   return (
     <div className="LoginPage">
