@@ -11,7 +11,7 @@ const Companydata = () => {
     const [CompanyData, setCompanyData] = useState({
         uid: authData.uid,
         name: "",
-        email: "default mail",
+        email: authData.email,
         secondaryMail: "",
         field: "",
         type: "",

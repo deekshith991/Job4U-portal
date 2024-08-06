@@ -13,7 +13,7 @@ const Userdata = () => {
         uid: authData.uid,
         firstName: "",
         lastName: "",
-        email: "default sett",
+        email: authData.email,
         personelMail: "",
         qualification: "",
         specialization: "",
