@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { LoginUser } from "../services/AuthService";
+import { useAuth } from "../services/AuthContext";
+import { useNavigate } from "react-router-dom";
 import { LoginUser, ServerCheck } from "../services/AuthService";
-import { useAuth } from "../services.js/AuthContext";
 import { Link } from "react-router-dom";
 import RegisterPage from "./RegisterPage";
 
@@ -9,6 +11,7 @@ const LoginPage = () => {
   ServerCheck();
 
   const { authData, setAuthData } = useAuth();
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,14 +24,26 @@ const LoginPage = () => {
       password: password,
     };
 
-    // Network Integration
-    const Resp = await LoginUser(data);
-    console.log(Resp);
-    console.log(Resp.status);
+    try {
+      // Network Integration
+      const Resp = await LoginUser(data);
 
-    // console.log(JSON.stringify(Resp));
+      console.log(Resp);
 
+      if (Resp.success) {
+
+        // alert("Logging in...");
+        setAuthData({ isLoggedIn: true, email: Resp.email, uid: Resp.Uid, account: Resp.account });
+        navigate('/home');
+      } else {
+        alert(Resp.message || "An error occurred. Please try again.");
+      }
+    } catch (error) {
+      console.error("Login failed:", error);
+      alert("An unexpected error occurred. Please try again.");
+    }
   };
+
 
   return (
     <div className="LoginPage">
