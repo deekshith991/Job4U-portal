@@ -31,12 +31,12 @@ router.post("/profile", async (req, res) => {
 
         await data.save();
         console.log("company profile saved", data._id);
-        return res.json({ status: "success", message: "Profile saved", pid: data._id }).status(200);
+        return res.json({ success: true, message: "Profile saved", pid: data._id }).status(200);
 
     } catch (error) {
         console.log(error);
         console.log("Error at company profile post route");
-        return res.json({ status: "success", message: "error saving profile" }).status(500);
+        return res.json({ success: false, message: "error saving profile" }).status(500);
 
     }
 })
