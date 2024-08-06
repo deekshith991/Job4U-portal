@@ -14,22 +14,23 @@ router.post("/Login", async (req, res) => {
 
     if (existing_user) {
       return res.status(200).json({
-        status: "success",
+        success: true,
         message: "Login",
         uid: existing_user._id,
         email: existing_user.email,
+        account: existing_user.account
       });
     } else {
       return res
         .status(500)
-        .json({ status: "failed", message: "User Credential's Invalid" });
+        .json({ success: false, message: "User Credential's Invalid" });
     }
   } catch (error) {
     console.log("Error");
     console.log(error);
     return res
       .status(500)
-      .json({ status: "failed", message: "Error at server" });
+      .json({ success: false, message: "Error at server" });
   }
 });
 
@@ -42,7 +43,7 @@ router.post("/Register", async (req, res) => {
     if (existing_user) {
       return res
         .status(500)
-        .json({ status: "failed", message: "User already Exist's" });
+        .json({ success: false, message: "User already Exist's" });
     }
 
     const User = new Users({ account, email, password });
@@ -50,17 +51,18 @@ router.post("/Register", async (req, res) => {
     await User.save();
     console.log(User._id);
     return res.status(200).json({
-      status: "success",
+      success: true,
       message: "User Created",
       Uid: User._id,
       email: User.email,
+      account: User.account
     });
   } catch (error) {
     console.log("Error :");
     console.log(error);
     return res
       .status(500)
-      .json({ status: "failed", message: "Error at server" });
+      .json({ success: false, message: "Error at server" });
   }
 });
 

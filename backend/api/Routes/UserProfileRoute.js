@@ -35,12 +35,12 @@ router.post('/profile', async (req, res) => {
 
         await data.save();
         console.log("Profile Data id", data._id);
-        return res.json({ status: "success", message: "Profile saved", pid: data._id }).status(200);
+        return res.json({ success: true, message: "Profile saved", pid: data._id }).status(200);
 
     } catch (error) {
         console.log(error);
         console.log("profile Post error");
-        return res.json({ status: "failed", message: "error registering" }).status(500);
+        return res.json({ success: false, message: "error registering" }).status(500);
     }
 });
 
