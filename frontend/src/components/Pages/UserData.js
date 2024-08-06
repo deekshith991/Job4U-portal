@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { UserProfileUpdate } from "../services/UserService";
+import { useNavigate } from "react-router-dom";
 
 
 const Userdata = () => {
 
-
+    const navigate = useNavigate();
 
     const [UserData, setUserData] = useState({
         firstName: "",
@@ -29,8 +30,9 @@ const Userdata = () => {
         const resp = await UserProfileUpdate(UserData);
 
         console.log(resp.status);
-        if (resp.status === "success") {
+        if (resp.success) {
             alert("Successfully updated");
+            navigate('/home');
         } else {
             alert("please use another mail for Registration");
         }

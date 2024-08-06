@@ -32,6 +32,7 @@ function App() {
           (<Routes>
             <Route path='/companyProfile' element={<Companydata />} />
             <Route path='/userProfile' element={<Userdata />} />
+            <Route path='/home' element={<HomePage />} />
             <Route path='/*' element={<HomePage />} />
           </Routes>)
 
