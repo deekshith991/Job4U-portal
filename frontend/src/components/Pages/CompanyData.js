@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { CompanyProfileUpdate } from "../services/CompanyService";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../services/AuthContext";
 
 const Companydata = () => {
 
     const navigate = useNavigate();
+    const { authData, setAuthData } = useAuth();
+
     const [CompanyData, setCompanyData] = useState({
+        uid: authData.uid,
         name: "",
         email: "default mail",
         secondaryMail: "",
@@ -21,12 +25,15 @@ const Companydata = () => {
     const submitHandle = async (e) => {
         e.preventDefault();
 
+        console.log(authData);
+
         console.log(CompanyData);
+        console.log(CompanyData.uid);
 
         const resp = await CompanyProfileUpdate(CompanyData);
 
         if (resp.success) {
-            alert("success");
+            // alert("success");
             navigate('/home');
         }
         else {

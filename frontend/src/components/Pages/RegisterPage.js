@@ -30,14 +30,14 @@ const RegisterPage = () => {
 
             // redirection 
             if (Resp.success) {
-                alert("registering");
-                setAuthData({ isLoggedIn: true, email: Resp.email, uid: Resp.uid, account: Resp.account });
+                // alert("registering");
+                setAuthData({ isLoggedIn: true, email: Resp.email, uid: Resp.Uid, account: Resp.account });
                 if (Resp.account === "Employer") {
-                    alert("redirecting to employer");
+                    // alert("redirecting to employer");
                     navigate('/companyProfile');
                 }
                 if (Resp.account === 'JobSeeker') {
-                    alert("redirecting to user");
+                    // alert("redirecting to user");
                     navigate('/userProfile')
                 }
             } else {

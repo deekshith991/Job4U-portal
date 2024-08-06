@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { UserProfileUpdate } from "../services/UserService";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../services/AuthContext";
 
 
 const Userdata = () => {
 
     const navigate = useNavigate();
+    const { authData } = useAuth();
 
     const [UserData, setUserData] = useState({
+        uid: authData.uid,
         firstName: "",
         lastName: "",
         email: "default sett",
@@ -31,12 +34,12 @@ const Userdata = () => {
 
         console.log(resp.status);
         if (resp.success) {
-            alert("Successfully updated");
+            // alert("Successfully updated");
             navigate('/home');
         } else {
             alert("please use another mail for Registration");
         }
-        console.log(resp);
+        // console.log(resp);
     }
 
     return (
