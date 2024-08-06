@@ -2,7 +2,7 @@ import { useState } from "react";
 import { RegisterUser } from "../services/AuthService";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../services/AuthContext";
-
+import { Link } from "react-router-dom";
 
 const RegisterPage = () => {
 
