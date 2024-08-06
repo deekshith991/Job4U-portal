@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { CompanyProfileUpdate } from "../services/CompanyService";
+import { useNavigate } from "react-router-dom";
 
 const Companydata = () => {
+
+    const navigate = useNavigate();
     const [CompanyData, setCompanyData] = useState({
         name: "",
         email: "default mail",
@@ -22,8 +25,9 @@ const Companydata = () => {
 
         const resp = await CompanyProfileUpdate(CompanyData);
 
-        if (resp.status === "success") {
+        if (resp.success) {
             alert("success");
+            navigate('/home');
         }
         else {
             console.log(resp);
