@@ -61,7 +61,7 @@ const Userdata = () => {
 
                     <div className="Input">
                         <label>Email: </label>
-                        <input disabled placeholder="need to work" />
+                        <input disabled placeholder={authData.email} />
                     </div>
 
                     <div className="Input">
