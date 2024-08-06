@@ -22,8 +22,8 @@ router.post("/Login", async (req, res) => {
       });
     } else {
       return res
-        .status(500)
-        .json({ success: false, message: "User Credential's Invalid" });
+        .json({ success: false, message: "User Credential's Invalid" })
+        .status(401);
     }
   } catch (error) {
     console.log("Error");
@@ -42,8 +42,8 @@ router.post("/Register", async (req, res) => {
 
     if (existing_user) {
       return res
-        .status(500)
-        .json({ success: false, message: "User already Exist's" });
+        .json({ success: false, message: "User already Exist's" })
+        .status(401);
     }
 
     const User = new Users({ account, email, password });
@@ -57,13 +57,15 @@ router.post("/Register", async (req, res) => {
       email: User.email,
       account: User.account
     });
+
   } catch (error) {
     console.log("Error :");
     console.log(error);
     return res
-      .status(500)
-      .json({ success: false, message: "Error at server" });
+      .json({ success: false, message: "Error at server" })
+      .status(401);
   }
 });
+
 
 module.exports = router;
