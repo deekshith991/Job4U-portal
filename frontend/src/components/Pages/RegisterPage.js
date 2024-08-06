@@ -1,8 +1,13 @@
 import { useState } from "react";
 import { RegisterUser } from "../services/AuthService";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../services/AuthContext";
 
 const RegisterPage = () => {
+
+    const { authData, setAuthData } = useAuth();
+    const navigate = useNavigate();
+
     const [account, setaccount] = useState("JobSeeker");
     const [email, setemail] = useState("");
     const [password, setpassword] = useState("");
@@ -17,10 +22,30 @@ const RegisterPage = () => {
         };
         console.log(data);
 
-        // Network Integration
+        try {
+            // Network Integration
+            const Resp = await RegisterUser(data);
+            console.log(Resp);
 
-        const Resp = await RegisterUser(data);
-        console.log(Resp);
+            // redirection 
+            if (Resp.success) {
+                // alert("registering");
+                setAuthData({ isLoggedIn: true, email: Resp.email, uid: Resp.Uid, account: Resp.account });
+                if (Resp.account === "Employer") {
+                    // alert("redirecting to employer");
+                    navigate('/companyProfile');
+                }
+                if (Resp.account === 'JobSeeker') {
+                    // alert("redirecting to user");
+                    navigate('/userProfile')
+                }
+            } else {
+                alert(Resp.message);
+            }
+        } catch (error) {
+            alert("error at register page", error);
+        }
+
     }
 
     return (
