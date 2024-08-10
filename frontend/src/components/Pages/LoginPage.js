@@ -32,7 +32,7 @@ const LoginPage = () => {
       if (Resp.success) {
 
         // alert("Logging in...");
-        setAuthData({ isLoggedIn: true, email: Resp.email, uid: Resp.Uid, account: Resp.account });
+        setAuthData({ isLoggedIn: true, email: Resp.email, uid: Resp.uid, account: Resp.account });
         navigate('/home');
       } else {
         alert(Resp.message || "An error occurred. Please try again.");
