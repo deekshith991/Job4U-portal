@@ -8,7 +8,7 @@ const CompanyPage = () => {
             <div className="top-section">
 
                 <div className="left-half">
-                    <h1>Left Half</h1>
+                    <h1>Jobs issued</h1>
                 </div>
 
                 <div className="issue-job">
@@ -18,7 +18,7 @@ const CompanyPage = () => {
             </div>
 
             <div className="bottom-section">
-                <h1>Bottom</h1>
+                <h1>analytics</h1>
             </div>
 
         </div>
