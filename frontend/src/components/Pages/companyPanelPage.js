@@ -1,14 +1,28 @@
-import IssueJob from "../Sections/IssueJob"
-
-
+import IssueJob from "../Sections/IssueJob";
+import HeaderSec from "../Sections/HeaderSec";
 
 const CompanyPage = () => {
-
     return (
         <div className="basepage">
-            <IssueJob />
+            <HeaderSec />
+            <div className="top-section">
+
+                <div className="left-half">
+                    <h1>Left Half</h1>
+                </div>
+
+                <div className="issue-job">
+                    <IssueJob />
+                </div>
+
+            </div>
+
+            <div className="bottom-section">
+                <h1>Bottom</h1>
+            </div>
+
         </div>
-    )
+    );
 }
 
 export default CompanyPage;
