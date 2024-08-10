@@ -7,6 +7,7 @@ import { useAuth } from './components/services/AuthContext';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import HomePage from './components/Pages/HomePage';
 import ErrorPage from './components/Pages/ErrorPage';
+import CompanyPage from './components/Pages/companyPanelPage';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route path='/login' element={<LoginPage />} />
             <Route path='/register' element={<RegisterPage />} />
             <Route path='/home' element={<HomePage />} />
+            {/* <Route path='/test' element={<CompanyPage />} /> */}
             <Route path='/' element={<Navigate to="/login" />} />
             <Route path='/*' element={<Navigate to="/login" />} />
           </Routes>)
@@ -31,6 +33,7 @@ function App() {
           //Logged In case Yes
           (<Routes>
             <Route path='/companyProfile' element={<Companydata />} />
+            <Route path='/companypanel' element={<CompanyPage />} />
             <Route path='/userProfile' element={<Userdata />} />
             <Route path='/home' element={<HomePage />} />
             <Route path='/*' element={<HomePage />} />

@@ -1,5 +1,6 @@
 import { useAuth } from '../services/AuthContext'
 import { useState } from 'react';
+import { PostJob } from '../services/CompanyService';
 
 
 const IssueJob = () => {
@@ -19,10 +20,13 @@ const IssueJob = () => {
         setJobData({ ...JobData, [name]: value });
     }
 
-    const handlesubmit = (e) => {
+    const handlesubmit = async (e) => {
         e.preventDefault();
 
         console.log(JobData);
+        const resp = await PostJob(JobData);
+
+        // console.log(resp);
     }
 
     return (
