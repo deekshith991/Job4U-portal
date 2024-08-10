@@ -1,8 +1,8 @@
 import axios from "axios";
 
 
-// const api_url = "https://job4-u-portal.vercel.app"; // vercel live code ..
-const api_url = "http://localhost:3333"; // demo code
+const api_url = "https://job4-u-portal.vercel.app"; // vercel live code ..
+//const api_url = "http://localhost:3333"; // demo code
 
 export const CompanyProfileUpdate = async (data) => {
 
