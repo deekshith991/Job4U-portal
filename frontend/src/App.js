@@ -23,6 +23,7 @@ function App() {
             <Route path='/Error' element={<ErrorPage />} />
             <Route path='/login' element={<LoginPage />} />
             <Route path='/register' element={<RegisterPage />} />
+            <Route path='/home' element={<HomePage />} />
             <Route path='/' element={<Navigate to="/login" />} />
             <Route path='/*' element={<Navigate to="/login" />} />
           </Routes>)
