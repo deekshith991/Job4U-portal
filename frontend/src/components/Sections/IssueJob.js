@@ -1,33 +1,55 @@
+import { useAuth } from '../services/AuthContext'
+import { useState } from 'react';
 
 
 const IssueJob = () => {
 
+    const { authData } = useAuth();
+
+    const [JobData, setJobData] = useState({
+        uid: authData.uid,
+        position: "",
+        salary: "",
+        lastDate: "",
+        jd: ""
+    });
+
+    const handlechange = (e) => {
+        const { name, value } = e.target;
+        setJobData({ ...JobData, [name]: value });
+    }
+
+    const handlesubmit = (e) => {
+        e.preventDefault();
+
+        console.log(JobData);
+    }
 
     return (
         <div className="IssueJob">
-            <form>
+            <form onSubmit={handlesubmit}>
                 <div className="Input">
                     <label>Position :</label>
-                    <input placeholder="Position" />
+                    <input placeholder="Position" type='text' name="position" value={JobData.position} onChange={handlechange} />
                 </div>
 
                 <div className="Input">
                     <label>Salary :</label>
-                    <input placeholder="Salary" />
+                    <input placeholder="Salary" name='salary' type='number' value={JobData.salary} onChange={handlechange} />
                 </div>
 
                 <div className="Input">
                     <label>Last Date :</label>
-                    <input placeholder="DD/MM/YYY" />
+                    <input placeholder="DD/MM/YYY" type='date' name='lastDate' value={JobData.lastDate} onChange={handlechange} />
                 </div>
 
                 <div className="Input">
                     <label>Job Description :</label>
-                    <input placeholder="Description" />
+                    <input placeholder="Description" type='text' name='jd' value={JobData.jd} onChange={handlechange} />
                 </div>
+                <button className="IssueJobBtn" type='submit'>Issue</button>
             </form>
 
-            <button className="IssueJobBtn">Issue</button>
         </div>
     )
 }
