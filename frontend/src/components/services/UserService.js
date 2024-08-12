@@ -16,3 +16,18 @@ export const UserProfileUpdate = async (data) => {
         console.log("UserProfile Error")
     }
 }
+
+export const getJobs = async () => {
+
+    try {
+
+        const response = await axios.get(`${api_url}/api/jobs`);
+
+        console.log(response.data);
+        return response.data;
+
+    } catch (error) {
+        console.log(error);
+        console.log("error in getJobs api func");
+    }
+}
