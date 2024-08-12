@@ -10,16 +10,7 @@ const JobGallery = () => {
             <h1 className="TITLE"> Jobs Latest</h1>
 
             <div className="Gallery">
-                <JobCard />
-                <JobCard />
-                <JobCard />
-                <JobCard />
-                <JobCard />
-                <JobCard />
-                <JobCard />
-                <JobCard />
-                <JobCard />
-                <JobCard />
+
 
             </div>
         </div>
