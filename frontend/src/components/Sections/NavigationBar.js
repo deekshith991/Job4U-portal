@@ -31,6 +31,10 @@ const NavigationBar = () => {
         console.log(authData);
 
     }
+
+    const GoToGallery = () => {
+        navigate('/gallery');
+    }
     return (
         <>
             {authData.isLoggedIn ?
@@ -42,7 +46,7 @@ const NavigationBar = () => {
                 )
                 :
                 (<div className="rightSec">
-                    <button className="navBtn">gallery</button >
+                    <button className="navBtn" onClick={GoToGallery}>gallery</button >
                     <button className="navBtn" onClick={GotoLogin}>logIn</button>
                 </div >)
             }

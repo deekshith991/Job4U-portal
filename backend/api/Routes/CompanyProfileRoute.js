@@ -52,7 +52,7 @@ router.post("/post", async (req, res) => {
             lastDate,
             jd
         } = req.body;
-
+        // company name fetch system should be added here
         const data = new Jobs({
             uid,
             position,

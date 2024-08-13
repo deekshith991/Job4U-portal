@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import HomePage from './components/Pages/HomePage';
 import ErrorPage from './components/Pages/ErrorPage';
 import CompanyPage from './components/Pages/companyPanelPage';
+import JobGallery from './components/Pages/JobGallery';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route path='/Error' element={<ErrorPage />} />
             <Route path='/login' element={<LoginPage />} />
             <Route path='/register' element={<RegisterPage />} />
+            <Route path='/gallery' element={<JobGallery />} />
             <Route path='/home' element={<HomePage />} />
             {/* <Route path='/test' element={<CompanyPage />} /> */}
             <Route path='/' element={<Navigate to="/login" />} />
@@ -35,6 +37,7 @@ function App() {
             <Route path='/companyProfile' element={<Companydata />} />
             <Route path='/companypanel' element={<CompanyPage />} />
             <Route path='/userProfile' element={<Userdata />} />
+            <Route path='/gallery' element={<JobGallery />} />
             <Route path='/home' element={<HomePage />} />
             <Route path='/*' element={<HomePage />} />
           </Routes>)
