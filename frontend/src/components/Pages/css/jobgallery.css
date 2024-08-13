@@ -80,11 +80,11 @@
 }
 
 /* Responsive Design: Adjust layout for smaller screens */
-@media (max-width: 768px) {
-    /* .Card {
+@media (max-width: 600px) {
+    .Card {
         width: 90vw;
         padding: 15px;
-    } */
+    }
 
     .JobCard {
         flex-direction: column;

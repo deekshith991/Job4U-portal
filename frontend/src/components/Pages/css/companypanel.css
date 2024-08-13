@@ -1,0 +1,34 @@
+/* Layout Sections */
+.top-section,
+.issue-job,
+.left-half {
+    display: flex;
+    width: 100%;
+}
+
+.issue-job,
+.left-half {
+    flex: 1;
+    align-items: stretch;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.issue-job {
+    background-color: #e8eae8;
+}
+
+.left-half {
+    background-color: #e0e0e0;
+}
+
+.bottom-section {
+    flex: 1;
+    /* background-color: #d0d0d0; */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.IssueJobBtn {
+    background-color: #c5edbf;
+}
