@@ -25,6 +25,10 @@ const UserProfileDataSchema = mongoose.Schema({
     },
     percentage: {
         type: Number
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
     }
 });
 

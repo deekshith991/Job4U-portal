@@ -3,6 +3,7 @@ const router = express.Router();
 
 const CompanyProfile = require('../../Models/CompanyProfileDataModel');
 const Jobs = require('../../Models/JobsModel');
+const UserModelSchema = require('../../Models/UserModelSchema');
 
 router.get("/companies", async (req, res) => {
 
@@ -52,9 +53,14 @@ router.post("/post", async (req, res) => {
             lastDate,
             jd
         } = req.body;
-        // company name fetch system should be added here
+
+        /* company name fetch system should be added here*/
+        const companydata = await CompanyProfile.findOne({ uid: uid });
+        const company = companydata.name;
+
         const data = new Jobs({
             uid,
+            company,
             position,
             salary,
             lastDate,
@@ -62,7 +68,7 @@ router.post("/post", async (req, res) => {
         });
 
         await data.save();
-        console.log("company profile saved", data._id);
+        console.log("job data saved", data._id);
         return res.json({ success: true, message: "Job Data saved", jid: data._id }).status(200);
 
     } catch (error) {
