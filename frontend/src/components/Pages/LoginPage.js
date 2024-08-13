@@ -3,7 +3,7 @@ import { useAuth } from "../services/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { LoginUser, ServerCheck } from "../services/AuthService";
 import { Link } from "react-router-dom";
-import RegisterPage from "./RegisterPage";
+import './css/cardpages.css';
 
 const LoginPage = () => {
 

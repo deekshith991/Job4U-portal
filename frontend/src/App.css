@@ -22,6 +22,23 @@ Button {
 }
 
 form {
-
     text-align: center;
+}
+
+#default-disabled-input {
+    color: black;
+    border: 0.5px solid #070707;
+    background-color: white;
+    cursor: not-allowed;
+}
+
+#default-disabled-input::placeholder {
+    opacity: 1;
+    color: black;
+    /* cursor: not-allowed; */
+}
+
+#default-disabled-input:disabled {
+    opacity: 1;
+
 }

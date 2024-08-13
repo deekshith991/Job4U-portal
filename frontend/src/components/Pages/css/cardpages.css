@@ -1,4 +1,6 @@
-.LoginPage {
+.LoginPage,
+.RegisterPage,
+.UserData {
     position: absolute;
     min-height: 100vh;
     width: 100vw;
@@ -8,7 +10,9 @@
     justify-content: center;
 }
 
-.LoginCard {
+.LoginCard,
+.RegisterCard,
+.ProfileData {
     background-color: antiquewhite;
     border-radius: 15px;
     padding: 20px;
@@ -18,10 +22,14 @@
     justify-content: center;
 }
 
-.LoginBtn {
+.LoginBtn,
+.RegisterBtn,
+.SaveBtn {
     background-color: rgb(144, 249, 144);
 }
 
-.LoginBtn:hover {
+.LoginBtn:hover,
+.RegisterBtn:hover,
+.SaveBtn:hover {
     background-color: rgb(46, 232, 46);
 }

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { UserProfileUpdate } from "../services/UserService";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../services/AuthContext";
-
+import './css/cardpages.css';
 
 const Userdata = () => {
 
@@ -61,7 +61,7 @@ const Userdata = () => {
 
                     <div className="Input">
                         <label>Email: </label>
-                        <input disabled placeholder={authData.email} />
+                        <input disabled placeholder={authData.email} id="default-disabled-input" />
                     </div>
 
                     <div className="Input">
