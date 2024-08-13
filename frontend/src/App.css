@@ -1,12 +1,15 @@
+/* Base Page Styling */
 .basepage {
   display: flex;
   flex-direction: column;
   height: 100vh;
   margin: 0;
-
   background-color: rgb(233, 194, 156);
+  box-sizing: border-box;
+  /* Include padding and border in the element's width and height */
 }
 
+/* Page Layouts */
 .LoginPage,
 .RegisterPage,
 .UserData,
@@ -14,35 +17,49 @@
   position: absolute;
   width: 100vw;
   min-height: 100vh;
-
   background-color: rgb(220, 218, 216);
-
   display: flex;
-
   align-items: center;
   justify-content: center;
 }
 
-.LoginCard,
-.RegisterCard,
-.ProfileData {
+/* Shared Card Styles */
+.Card {
   background-color: white;
   border-radius: 15px;
-  padding: 10px;
-
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.Input {
-  padding: 10px;
-  padding-top: 0px;
+.LoginCard,
+.RegisterCard,
+.ProfileData {
+  composes: Card;
 }
 
+/* Input Styles */
+.Input {
+  padding: 10px;
+  padding-top: 0;
+}
+
+/* Heading Styles */
 h5 {
-  margin-block-end: 2px;
   margin-block-start: 5px;
+  margin-block-end: 2px;
+}
+
+/* Button Styles */
+.Button {
+  background-color: rgb(125, 241, 125);
+  height: 30px;
+  width: 100px;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
 }
 
 .LoginBtn,
@@ -50,40 +67,34 @@ h5 {
 .SaveBtn,
 .IssueJobBtn {
   background-color: rgb(125, 241, 125);
-
   height: 30px;
-  width: 50pxs;
-
+  width: 100px;
   border-radius: 5px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
 }
 
-.JobGallery {
-  background-color: antiquewhite;
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  min-height: 100vh;
-}
-
+/* Header Section Styles */
 .HeaderSec {
   background-color: rgb(158, 236, 236);
-  width: 100%;
+  width: 100vw;
   height: 80px;
-
   display: flex;
   justify-content: space-between;
-
+  align-items: center;
   border-bottom: 2px solid rgb(101, 100, 100);
+  box-sizing: border-box;
+  margin: 0;
 }
 
-.leftSec {
+.HeaderSec .leftSec,
+.HeaderSec .rightSec {
   display: flex;
   align-items: center;
 }
 
 .rightSec {
-  display: flex;
-  align-items: center;
   justify-content: space-around;
   padding: 10px;
 }
@@ -92,95 +103,169 @@ h5 {
   height: 30px;
   width: 70px;
   margin: 5px;
-
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .Logo {
   height: 50px;
   width: 50px;
   padding: 10px;
-
   background-color: white;
-  margin-left: 20px;
-  margin-right: 10px;
-
-  border-radius: 100%;
-
+  margin: 0 10px;
+  border-radius: 50%;
   border: 2px solid black;
 }
 
-.Gallery {
-  /* background-color: red; */
-
+/* Layout Sections */
+.top-section,
+.issue-job,
+.left-half {
   display: flex;
-  width: 0dvw;
+  width: 100%;
+}
+
+.issue-job,
+.left-half {
+  flex: 1;
+  align-items: stretch;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.issue-job {
+  background-color: #f0f0f0;
+}
+
+.left-half {
+  background-color: #e0e0e0;
+}
+
+.bottom-section {
+  flex: 1;
+  background-color: #d0d0d0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Job Gallery CSS */
+.JobGallery {
+  background-color: #f4f4f4;
+  max-width: 100vw;
+  margin: 0 auto;
+  /* padding: 20px 10px; */
+  box-sizing: border-box;
 }
 
 .TITLE {
   text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.Gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 0;
+  padding: 20px 10px;
 }
 
 .JobCard {
-  border: 2px black solid;
-  width: 200px;
-  margin: 10px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.CompanyPic {
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
+.CompanyPic img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .JobDetails {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-grow: 1;
+  margin: 0;
 }
 
-h3,
-h4 {
-  margin: 1px;
+.JobDetails h3 {
+  font-size: 1.25rem;
+  color: #333;
+  margin: 0;
+  padding: 5px 0;
+}
+
+.JobDetails h4 {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+  padding: 5px 0;
 }
 
 .ApplyBtn {
-  margin: 5px;
-  border-radius: 10px;
-  background-color: aqua;
-  width: 100px;
-  font-size: 20px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
-/* The top-section is a flex container that will arrange children horizontally */
-.top-section {
-  display: flex;
-  width: 100%;
+.ApplyBtn:hover {
+  background-color: #0056b3;
 }
 
-/* The issue-job and left-half sections will adjust their height based on the taller one */
-.issue-job,
-.left-half {
-  flex: 1;
+.ApplyBtn:focus {
+  outline: 2px solid #0056b3;
 }
 
-/* To make sure they have the same height, ensure they stretch */
-.issue-job {
-  display: flex;
-  align-items: stretch;
-  background-color: #f0f0f0;
-
-  padding: 20px;
-
-  width: 100%;
+.ApplyBtn:disabled {
+  background-color: #d6d6d6;
+  cursor: not-allowed;
 }
 
-.left-half {
-  display: flex;
-  align-items: stretch;
-  background-color: #e0e0e0;
-  /* Optional background color */
-}
+/* Responsive Design: Adjust layout for smaller screens */
+@media (max-width: 768px) {
+  .Card {
+    width: 90vw;
+    padding: 15px;
+  }
 
-/* The bottom-section will take up the remaining height */
-.bottom-section {
-  flex: 1;
-  background-color: #d0d0d0;
-  /* Optional background color */
-  padding: 20px;
-  box-sizing: border-box;
+  .JobCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .CompanyPic {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .JobDetails {
+    text-align: left;
+  }
+
+  .JobGallery {
+    padding: 10px;
+  }
+
+  .HeaderSec {
+    flex-direction: column;
+    align-items: center;
+  }
 }
