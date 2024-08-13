@@ -34,7 +34,7 @@ const IssueJob = () => {
             <form onSubmit={handlesubmit}>
                 <div className="Input">
                     <label>Position :</label>
-                    <input placeholder="Position" type='text' name="position" value={JobData.position} onChange={handlechange} />
+                    <input placeholder="Position" type='text' required name="position" value={JobData.position} onChange={handlechange} />
                 </div>
 
                 <div className="Input">
