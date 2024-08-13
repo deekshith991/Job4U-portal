@@ -1,0 +1,27 @@
+.LoginPage {
+    position: absolute;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.LoginCard {
+    background-color: antiquewhite;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.LoginBtn {
+    background-color: rgb(144, 249, 144);
+}
+
+.LoginBtn:hover {
+    background-color: rgb(46, 232, 46);
+}
