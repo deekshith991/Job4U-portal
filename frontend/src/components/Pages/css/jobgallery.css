@@ -1,0 +1,111 @@
+.TITLE {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.Gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0;
+    padding: 20px 10px;
+}
+
+.JobCard {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    /* width should be 500px  */
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+.CompanyPic {
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+.CompanyPic img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.JobDetails {
+    flex-grow: 1;
+    margin: 0;
+}
+
+.JobDetails h3 {
+    font-size: 1.25rem;
+    color: #333;
+    margin: 0;
+    padding: 5px 0;
+}
+
+.JobDetails h4 {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+    padding: 5px 0;
+}
+
+.ApplyBtn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.ApplyBtn:hover {
+    background-color: #0056b3;
+}
+
+.ApplyBtn:focus {
+    outline: 2px solid #0056b3;
+}
+
+.ApplyBtn:disabled {
+    background-color: #d6d6d6;
+    cursor: not-allowed;
+}
+
+/* Responsive Design: Adjust layout for smaller screens */
+@media (max-width: 768px) {
+    /* .Card {
+        width: 90vw;
+        padding: 15px;
+    } */
+
+    .JobCard {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .CompanyPic {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .JobDetails {
+        text-align: left;
+    }
+
+    .JobGallery {
+        padding: 10px;
+    }
+
+    .HeaderSec {
+        flex-direction: column;
+        align-items: center;
+    }
+}
