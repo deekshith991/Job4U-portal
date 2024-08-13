@@ -3,7 +3,7 @@ import { useAuth } from "../services/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { LoginUser, ServerCheck } from "../services/AuthService";
 import { Link } from "react-router-dom";
-import RegisterPage from "./RegisterPage";
+import './css/cardpages.css';
 
 const LoginPage = () => {
 
@@ -33,7 +33,14 @@ const LoginPage = () => {
 
         // alert("Logging in...");
         setAuthData({ isLoggedIn: true, email: Resp.email, uid: Resp.uid, account: Resp.account });
-        navigate('/home');
+        if (Resp.account === "Employer") {
+          // alert("redirecting to employer");
+          navigate('/companypanel');
+        }
+        if (Resp.account === 'JobSeeker') {
+          // alert("redirecting to user");
+          navigate('/gallery')
+        }
       } else {
         alert(Resp.message || "An error occurred. Please try again.");
       }

@@ -1,5 +1,6 @@
 import IssueJob from "../Sections/IssueJob";
 import HeaderSec from "../Sections/HeaderSec";
+import './css/companypanel.css';
 
 const CompanyPage = () => {
     return (

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import HeaderSec from "../Sections/HeaderSec";
 import JobCard from "../Sections/JobCard";
 import { getJobs } from "../services/UserService";
+import './css/jobgallery.css';
 
 const JobGallery = () => {
 
@@ -39,7 +40,7 @@ const JobGallery = () => {
                             key={job._id}
                             companyName={job.companyName || "Unknown Company"}
                             position={job.position || "No Position"}
-                            salary={job.salary || 0}
+                            salary={job.salary || " N/A"}
                             lastDate={job.lastDate || "No Deadline"}
                         />
                     ))
