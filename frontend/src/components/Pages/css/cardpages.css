@@ -1,6 +1,7 @@
 .LoginPage,
 .RegisterPage,
-.UserData {
+.UserData,
+.CompanyData {
     position: absolute;
     min-height: 100vh;
     width: 100vw;

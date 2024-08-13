@@ -57,7 +57,7 @@ const Companydata = () => {
 
                     <div className="Input">
                         <label>Email: </label>
-                        <input disabled placeholder={authData.email} name="email" value={CompanyData.email} onChange={changeHandle} />
+                        <input disabled placeholder={authData.email} id="default-disabled-input" />
                     </div>
 
                     <div className="Input">
