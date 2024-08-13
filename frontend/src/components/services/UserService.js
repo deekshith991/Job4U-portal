@@ -24,7 +24,7 @@ export const getJobs = async () => {
 
         const response = await axios.get(`${api_url}/api/jobs`);
 
-        console.log(response.data);
+        // console.log(response.data);
         return response.data;
 
     } catch (error) {
