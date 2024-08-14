@@ -1,5 +1,6 @@
 import CardDisplayer from "../Sections/CardDisplayer";
 import HeaderSec from "../Sections/HeaderSec";
+import './css/jobgallery.css'
 
 
 const JOBgallery = () => {

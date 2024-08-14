@@ -4,7 +4,7 @@ import React, { createContext, useState, useContext } from 'react';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const [userInformation, setUserInformation] = useState('');
+
     const [authData, setAuthData] = useState({
         account: '',
         uid: '',
@@ -13,9 +13,13 @@ export const AuthProvider = ({ children }) => {
         isLoggedIn: false
     });
 
+    //const API_URL = "http://localhost:3333";
+    const API_URL = "https://job4-u-portal.vercel.app"; // vercel live code ..
+
+
 
     return (
-        <AuthContext.Provider value={{ authData, setAuthData, userInformation, setUserInformation }}>
+        <AuthContext.Provider value={{ authData, setAuthData, API_URL }}>
             {children}
         </AuthContext.Provider>
     );

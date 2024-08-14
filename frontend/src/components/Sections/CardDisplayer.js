@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import JobCard from "../Sections/JobCard";
-import { getJobs } from "../services/UserService";
+import { useAuth } from '../services/AuthContext';
+import axios from 'axios';
 
 const CardDisplayer = () => {
 
@@ -8,10 +9,33 @@ const CardDisplayer = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const { authData, API_URL } = useAuth();
+
+    const getJobsss = async () => {
+
+        try {
+            let data = "";
+            if (authData.account === "Employer") {
+                data = authData.uid;
+            }
+
+            const response = await axios.get(`${API_URL}/api/jobs`, data);
+
+            // console.log("get", response.data);
+            return response.data;
+
+        } catch (error) {
+            console.log(error);
+            console.log("error in getJobs api func");
+        }
+    }
+
+
     useEffect(() => {
         const fetchJobs = async () => {
             try {
-                const jobsData = await getJobs();
+                const jobsData = await getJobsss();
+                // console.log("eff", jobsData);
                 setJobs(jobsData);
             } catch (err) {
                 setError("Failed to fetch jobs. Please try again later.");

@@ -1,111 +1,169 @@
-.TITLE {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
-}
+/* styles.css */
 
-.Gallery {
+/* JOBgallery styles */
+.jobgallery {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    height: 100vh;
+    /* Full viewport height */
     margin: 0;
-    padding: 20px 10px;
 }
 
+.header {
+    flex: 0 0 auto;
+    /* Keeps the header from shrinking */
+}
+
+.baseView {
+    flex: 1;
+    /* Fills the remaining space */
+    display: flex;
+    justify-content: center;
+    /* Center content horizontally */
+    align-items: center;
+    /* Center content vertically */
+}
+
+/* CardDisplayer styles */
+.Gallery {
+    width: 100%;
+    /* Full width of its container */
+    padding: 1rem;
+    /* Optional padding */
+    box-sizing: border-box;
+    /* Include padding in the element's total width and height */
+    overflow-y: auto;
+    /* Add scroll if content overflows vertically */
+    display: flex;
+    flex-direction: column;
+    /* Stack cards vertically */
+    align-items: center;
+    /* Center the cards horizontally */
+}
+
+.Gallery>* {
+    width: 90%;
+    /* 90% width of the container */
+    margin-bottom: 0.5rem;
+    /* Spacing between job cards */
+}
+
+/* JobCard styles */
 .JobCard {
     display: flex;
-    align-items: center;
-    background-color: #fff;
+    flex-direction: row;
+    /* Default: content beside the image */
+    align-items: flex-start;
+    background: #f5f5dc;
+    /* Beige background */
     border: 1px solid #ddd;
     border-radius: 8px;
-    /* width should be 500px  */
-    width: 100%;
-    padding: 20px;
+    padding: 1rem;
+    width: 90%;
+    /* 90% width of the container */
+    margin-bottom: 0.5rem;
+    /* Space between job cards */
     box-sizing: border-box;
+    /* Include padding and border in the element's total width */
     overflow: hidden;
+    /* Hide overflow content */
+    position: relative;
+    /* For positioning the content below the image */
 }
 
-
 .CompanyPic {
-    flex-shrink: 0;
-    margin-right: 20px;
+    flex: 0 0 auto;
+    /* Prevents shrinking of the image container */
+    margin-right: 1rem;
+    /* Space between the image and content */
 }
 
 .CompanyPic img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
+    max-width: 100%;
+    /* Scales the image according to the container width */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 8px;
 }
 
 .JobDetails {
-    flex-grow: 1;
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    /* Stack content vertically */
+    flex: 1;
+    /* Allows the content to fill the remaining space */
+    min-width: 0;
+    /* Prevents content overflow issues */
 }
 
-.JobDetails h3 {
-    font-size: 1.25rem;
-    color: #333;
-    margin: 0;
-    padding: 5px 0;
-}
-
+/* Ensure text overflow handling */
+.JobDetails h3,
 .JobDetails h4 {
-    font-size: 1rem;
-    color: #666;
-    margin: 0;
-    padding: 5px 0;
+    margin: 0 0 0.5rem;
+    color: #333;
+    word-break: break-word;
+    /* Break long words to prevent overflow */
 }
 
+.JobDetails .button-group {
+    display: flex;
+    gap: 0.5rem;
+    /* Space between buttons */
+    margin-top: 0.5rem;
+}
+
+/* Adjust the button styling 
 .ApplyBtn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
     background-color: #007bff;
     color: #fff;
-    border: none;
-    cursor: pointer;
     font-size: 1rem;
-}
+}*/
 
-.ApplyBtn:hover {
-    background-color: #0056b3;
-}
-
-.ApplyBtn:focus {
-    outline: 2px solid #0056b3;
-}
-
-.ApplyBtn:disabled {
-    background-color: #d6d6d6;
-    cursor: not-allowed;
-}
-
-/* Responsive Design: Adjust layout for smaller screens */
-@media (max-width: 600px) {
-    .Card {
-        width: 90vw;
-        padding: 15px;
-    }
-
+/* Responsive styles */
+@media (max-width: 800px) {
     .JobCard {
         flex-direction: column;
+        /* Stack content below the image */
         align-items: flex-start;
+        /* Align content to the start */
     }
 
     .CompanyPic {
         margin-right: 0;
-        margin-bottom: 10px;
+        /* Remove the right margin */
+        margin-bottom: 1rem;
+        /* Add bottom margin */
     }
 
-    .JobDetails {
-        text-align: left;
+    .JobDetails .button-group {
+        width: 100%;
+        justify-content: space-between;
+        /* Spread the buttons across the width */
     }
+}
 
-    .JobGallery {
-        padding: 10px;
-    }
-
-    .HeaderSec {
+@media (min-width: 400px) and (max-width: 1000px) {
+    .JobCard {
         flex-direction: column;
-        align-items: center;
+        /* Content beside the image */
+    }
+
+    .CompanyPic {
+        margin-right: 1rem;
+        /* Space between the image and content */
+        margin-bottom: 0;
+        /* No bottom margin */
+    }
+}
+
+@media (max-width: 400px) {
+    .JobCard {
+        flex-direction: column;
+        /* Stack content below the image */
+        align-items: stretch;
+        /* Stretch content to fit the container */
     }
 }
