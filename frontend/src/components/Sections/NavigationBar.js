@@ -43,6 +43,7 @@ const NavigationBar = () => {
                     <div className="rightSec">
                         <button className="navBtn" onClick={() => { navigate('/home') }}>home</button >
                         {/* <button className="navBtn" >profile</button > */}
+                        <button className="navBtn" onClick={GoToGallery}> Gallery</button>
                         <button className="navBtn" onClick={changeView}>Panel</button >
                         <button className="navBtn" onClick={LogOut}>logOut</button>
                     </div >
