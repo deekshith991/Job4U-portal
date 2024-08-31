@@ -1,4 +1,5 @@
 import './../css/Header.css';
+import NavigationBar from './NavigationBar';
 
 
 const Header = () => {
@@ -12,7 +13,7 @@ const Header = () => {
             </div>
 
             <div className="Navigation">
-
+                <NavigationBar />
             </div>
 
         </div>
