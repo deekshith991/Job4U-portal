@@ -1,5 +1,5 @@
 import NavigationBar from "./NavigationBar";
-import '../Pages/css/header.css';
+import '../_Pages/css/header.css';
 
 const HeaderSec = () => {
 
