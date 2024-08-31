@@ -1,3 +1,5 @@
+import '../css/HomePage.css';
+import Footer from "../Sections/Footer";
 import Header from "../Sections/Header"
 
 
@@ -10,9 +12,11 @@ const HomePage = () => {
                 <Header />
             </div>
 
-
+            <div className="HomeContent">
+                <h1> home pages </h1>
+            </div>
             <div>
-
+                <Footer />
             </div>
         </div>
     )
