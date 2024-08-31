@@ -13,16 +13,14 @@ export const AuthProvider = ({ children }) => {
         isLoggedIn: false
     });
 
-    //const API_URL = "http://localhost:3333";
-    const API_URL = "https://job4-u-portal.vercel.app"; // vercel live code ..
-
-
-
     return (
-        <AuthContext.Provider value={{ authData, setAuthData, API_URL }}>
+        <AuthContext.Provider value={{ authData, setAuthData }}>
             {children}
         </AuthContext.Provider>
     );
 };
+
+export const API_URL = "http://localhost:3333";
+// export const API_URL = "https://job4-u-portal.vercel.app"; // vercel live code ..
 
 export const useAuth = () => useContext(AuthContext);
