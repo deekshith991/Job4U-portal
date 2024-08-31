@@ -1,0 +1,27 @@
+.Header {
+    background-color: rgb(158, 236, 236);
+    width: 100vw;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgb(101, 100, 100);
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.Header .leftSec,
+.Header .rightSec {
+    display: flex;
+    align-items: center;
+}
+
+.Logo {
+    height: 50px;
+    width: 50px;
+    padding: 2%;
+    background-color: white;
+    margin: 0 10px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+}
