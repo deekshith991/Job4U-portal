@@ -18,15 +18,17 @@ const Loginform = () => {
         };
 
         try {
-            console.log("login");
+
             const Resp = await LoginUser(data);
 
             if (Resp.success) {
                 setAuthData({ isLoggedIn: true, email: Resp.email, uid: Resp.uid, account: Resp.account });
                 if (Resp.account === "Employer") {
-                    // navigate('/companypanel');
+                    console.log("emp");
+                    // navigate('/companypanel'); 
                 }
                 if (Resp.account === 'JobSeeker') {
+                    console.log("user");
                     // navigate('/gallery')
                 }
             } else {
