@@ -4,7 +4,7 @@
     width: 100vw;
     min-height: 100vh;
     margin: 0;
-    background-color: rgb(249, 183, 117);
+    background-color: rgb(255, 234, 213);
     box-sizing: border-box;
 }
 
@@ -20,6 +20,7 @@ Button {
     text-align: center;
     cursor: pointer;
     margin: 5px;
+
 }
 
 form {
@@ -36,7 +37,7 @@ form {
 #default-disabled-input::placeholder {
     opacity: 1;
     color: black;
-    /* cursor: not-allowed; */
+    cursor: not-allowed;
 }
 
 #default-disabled-input:disabled {

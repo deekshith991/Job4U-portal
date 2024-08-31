@@ -1,0 +1,21 @@
+.loginpage {
+
+    background-color: transparent;
+    height: 100VH;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.LoginCard {
+    padding: 20px;
+    background-color: rgb(234, 229, 229);
+    max-width: 300px;
+
+    border-radius: 25px;
+}
+
+.loginform {
+    max-width: 300px;
+}
