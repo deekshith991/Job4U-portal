@@ -3,6 +3,7 @@ import Buttons from "./Buttons";
 import { useAuth } from "../service/AuthContext";
 import { useState } from "react";
 import { LoginUser } from "../service/AuthService";
+import { Link } from 'react-router-dom';
 
 const Loginform = () => {
 
@@ -65,10 +66,10 @@ const Loginform = () => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
-                <Buttons className="LoginBtn" name="Log In" color="rgb(112, 251, 112)" />
+                <Buttons className="LoginBtn" color="rgb(112, 251, 112)">Log In</Buttons>
             </form>
 
-            {/* <h5>Don't have an Account <Link to="/register"> Register</Link></h5> */}
+            <h5>Don't have an Account <Link to="/register"> Register</Link></h5>
 
         </div >
     );

@@ -1,9 +1,9 @@
 
 
-const Buttons = ({ name, color }) => {
+const Buttons = ({ color, onClick, children }) => {
 
     return (
-        <button style={{ backgroundColor: color }}>{name}</button>
+        <button type="button" style={{ backgroundColor: color }} onClick={onClick}>{children}</button>
     )
 }
 
