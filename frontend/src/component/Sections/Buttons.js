@@ -1,9 +1,9 @@
 
 
-const Buttons = ({ name }) => {
+const Buttons = ({ name, color }) => {
 
     return (
-        <button >{name}</button>
+        <button style={{ backgroundColor: color }}>{name}</button>
     )
 }
 
