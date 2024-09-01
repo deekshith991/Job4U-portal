@@ -1,9 +1,8 @@
-/* JobCard.css */
-
 /* Style for each JobCard */
 .JobCard {
     display: flex;
     flex-direction: column;
+    /* Default to column layout */
     max-width: 400px;
     border: 1px solid #f2bfbf;
     border-radius: 8px;
@@ -21,21 +20,16 @@
 
 /* Container for the company picture and job details */
 .CompanyPic {
-    flex-shrink: 0;
+    width: 100%;
+    /* Ensure it takes the full width of its container */
 }
 
 .CompanyPic img {
     width: 100%;
+    /* Image spans the full width of its container */
     height: auto;
+    /* Maintain aspect ratio */
     display: block;
-}
-
-#companyname {
-    margin: 0;
-}
-
-#companydetails {
-    margin: 0px;
 }
 
 /* Style for the job details section */
@@ -77,7 +71,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    /* Space between cards */
     justify-content: center;
 }
 
@@ -85,6 +78,12 @@
 @media (min-width: 600px) {
     .JobCard {
         flex-direction: row;
+        /* Switch to row layout on larger screens */
+    }
+
+    .CompanyPic {
+        width: 150px;
+        /* Fixed width for images in row layout */
     }
 
     .JobDetails {
@@ -93,12 +92,38 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 599px) {
     .JobCard {
         flex-direction: column;
+        /* Column layout for small screens */
+    }
+
+    .CompanyPic {
+        width: 100%;
+        /* Image takes full width in column layout */
     }
 
     .JobDetails {
         padding: 15px;
     }
+}
+
+/* Additional styles for very small screens (e.g., phones in portrait mode) */
+@media (max-width: 400px) {
+    .JobCard {
+        margin: 5px;
+        /* Reduce margin for very small screens */
+    }
+
+    .ApplyBtn {
+        font-size: 12px;
+        /* Smaller font size for buttons */
+        padding: 6px 10px;
+        /* Adjust padding for smaller screens */
+    }
+}
+
+#companyname,
+#companydetails {
+    margin: 0;
 }
