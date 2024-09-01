@@ -4,6 +4,7 @@ import LoginPage from './component/Pages/LoginPage';
 import HomePage from './component/Pages/HomePage';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import RegisterPage from './component/Pages/RegisterPage';
+import FormPage from './component/Pages/FormPage';
 
 
 
@@ -28,6 +29,7 @@ function App() {
                     //Logged In case Yes
                     (<Routes>
                         <Route path="/home" element={<HomePage />} />
+                        <Route path='/setprofile' element={<FormPage />} />
                     </Routes>)
                 }
 

@@ -21,6 +21,8 @@ Button {
     cursor: pointer;
     margin: 5px;
 
+    background-color: violet;
+
 }
 
 form {

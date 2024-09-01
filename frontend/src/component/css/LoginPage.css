@@ -11,13 +11,14 @@
 .baseCard {
     padding: 20px;
     background-color: rgb(234, 229, 229);
-    max-width: 300px;
+    max-width: 350px;
 
     border-radius: 25px;
 }
 
 .loginform,
 .userprofileform,
+.companyprofileform,
 .registerform {
     /* background-color: red; */
     max-width: 350px;
