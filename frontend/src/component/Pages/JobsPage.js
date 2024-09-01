@@ -1,6 +1,7 @@
 import '../css/HomePage.css';
 import Footer from "../Sections/Footer";
 import Header from "../Sections/Header"
+import JobLists from '../Sections/JobLists';
 
 
 const JobsPage = () => {
@@ -12,6 +13,7 @@ const JobsPage = () => {
 
             <div className="ContentView">
                 <h1> jobs </h1>
+                <div><JobLists /></div>
             </div>
 
             <div><Footer /></div>
