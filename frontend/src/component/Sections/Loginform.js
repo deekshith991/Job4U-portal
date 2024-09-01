@@ -66,7 +66,7 @@ const Loginform = () => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
-                <Buttons className="LoginBtn" color="rgb(112, 251, 112)">Log In</Buttons>
+                <Buttons className="LoginBtn" color="rgb(112, 251, 112)" type="submit">Log In</Buttons>
             </form>
 
             <h5>Don't have an Account <Link to="/register"> Register</Link></h5>

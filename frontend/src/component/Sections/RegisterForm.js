@@ -93,7 +93,7 @@ const RegisterForm = () => {
                     />
                 </div>
 
-                <Buttons color="rgb(112, 251, 112)">Register</Buttons>
+                <Buttons color="rgb(112, 251, 112)" type="submit">Register</Buttons>
 
             </form>
             <h5>Have an Account <Link to="/login"> Login </Link></h5>
