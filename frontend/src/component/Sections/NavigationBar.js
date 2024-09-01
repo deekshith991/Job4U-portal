@@ -99,7 +99,7 @@ const UserNav = () => {
         <div className="NavigationBar">
             <Buttons onClick={Gotohome}>Home</Buttons>
             <Buttons onClick={GotoJobs}>Gallery</Buttons>
-            <Buttons >my DashBoard</Buttons>
+            <Buttons >DashBoard</Buttons>
             <Buttons onClick={LogOut}>Log Out</Buttons>
         </div>
     );
