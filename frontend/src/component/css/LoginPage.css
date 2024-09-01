@@ -19,7 +19,8 @@
 .loginform,
 .userprofileform,
 .companyprofileform,
-.registerform {
+.registerform,
+.jobform {
     /* background-color: red; */
     max-width: 350px;
 }

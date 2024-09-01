@@ -99,6 +99,7 @@ const UserNav = () => {
         <div className="NavigationBar">
             <Buttons onClick={Gotohome}>Home</Buttons>
             <Buttons onClick={GotoJobs}>Gallery</Buttons>
+            <Buttons >my DashBoard</Buttons>
             <Buttons onClick={LogOut}>Log Out</Buttons>
         </div>
     );
@@ -119,8 +120,8 @@ const CompNav = () => {
         navigate('/home');
     }
 
-    const GotoJobs = () => {
-        navigate('/jobs');
+    const Gotopanel = () => {
+        navigate('/dashboard');
     }
     const Gotohome = () => {
         navigate('/home');
@@ -129,7 +130,7 @@ const CompNav = () => {
     return (
         <div className="NavigationBar">
             <Buttons onClick={Gotohome}>Home</Buttons>
-            <Buttons onClick={GotoJobs}>Gallery</Buttons>
+            <Buttons onClick={Gotopanel}>panel</Buttons>
             <Buttons onClick={LogOut}>Log Out</Buttons>
         </div>
     );
