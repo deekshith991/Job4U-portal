@@ -26,14 +26,13 @@ const Loginform = () => {
 
             if (Resp.success) {
                 setAuthData({ isLoggedIn: true, email: Resp.email, uid: Resp.uid, account: Resp.account });
-                navigate("/home");
                 if (Resp.account === "Employer") {
                     console.log("emp");
-                    // navigate('/companypanel'); 
+                    navigate('/dashboard');
                 }
                 if (Resp.account === 'JobSeeker') {
                     console.log("user");
-                    // navigate('/gallery')
+                    navigate('/home')
                 }
             } else {
                 alert(Resp.message || "An error occurred. Please try again.");

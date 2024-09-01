@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import RegisterPage from './component/Pages/RegisterPage';
 import FormPage from './component/Pages/FormPage';
 import JobsPage from './component/Pages/JobsPage';
+import DashBoard from './component/Pages/DashBoard';
 
 
 
@@ -34,6 +35,7 @@ function App() {
                         <Route path="/home" element={<HomePage />} />
                         <Route path='/setprofile' element={<FormPage />} />
                         <Route path='/jobs' element={<JobsPage />} />
+                        <Route path='/dashboard' element={<DashBoard />} />
                     </Routes>)
                 }
 
