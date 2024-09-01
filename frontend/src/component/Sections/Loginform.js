@@ -3,9 +3,11 @@ import Buttons from "./Buttons";
 import { useAuth } from "../service/AuthContext";
 import { useState } from "react";
 import { LoginUser } from "../service/AuthService";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Loginform = () => {
+
+    const navigate = useNavigate();
 
     const { setAuthData } = useAuth() || {};
     const [email, setEmail] = useState("");
@@ -24,6 +26,7 @@ const Loginform = () => {
 
             if (Resp.success) {
                 setAuthData({ isLoggedIn: true, email: Resp.email, uid: Resp.uid, account: Resp.account });
+                navigate("/home");
                 if (Resp.account === "Employer") {
                     console.log("emp");
                     // navigate('/companypanel'); 
