@@ -27,11 +27,11 @@ const Loginform = () => {
             if (Resp.success) {
                 setAuthData({ isLoggedIn: true, email: Resp.email, uid: Resp.uid, account: Resp.account });
                 if (Resp.account === "Employer") {
-                    console.log("emp");
+                    // console.log("emp");
                     navigate('/dashboard');
                 }
                 if (Resp.account === 'JobSeeker') {
-                    console.log("user");
+                    // console.log("user");
                     navigate('/home')
                 }
             } else {
