@@ -43,6 +43,8 @@
 /* Style for the buttons */
 .button-group {
     margin-top: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .ApplyBtn {
@@ -126,4 +128,5 @@
 #companyname,
 #companydetails {
     margin: 0;
+    font-size: medium;
 }

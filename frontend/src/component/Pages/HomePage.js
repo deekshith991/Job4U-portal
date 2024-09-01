@@ -1,6 +1,7 @@
 import '../css/HomePage.css';
 import Footer from "../Sections/Footer";
 import Header from "../Sections/Header"
+import HomeView from '../Sections/HomeView';
 
 
 const HomePage = () => {
@@ -11,7 +12,7 @@ const HomePage = () => {
             <div><Header /></div>
 
             <div className="ContentView">
-                <h1> home pages </h1>
+                <HomeView />
             </div>
 
             <div><Footer /></div>
