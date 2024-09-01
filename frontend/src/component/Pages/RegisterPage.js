@@ -7,7 +7,7 @@ const RegisterPage = () => {
 
         <div className="baseformpage">
             <div className='baseCard'>
-                <h1>Register Paage</h1>
+                <h1>Register Page</h1>
                 <RegisterForm />
             </div>
         </div>
