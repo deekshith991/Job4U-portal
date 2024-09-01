@@ -41,14 +41,14 @@
 }
 
 .summary {
-    /* font-family: "caveat"; */
+    font-family: "caveat";
     color: white;
     font-weight: bold;
     font-size: 50px;
 }
 
 .paragraphs {
-    /* font-family: "roboto"; */
+    font-family: "roboto";
     color: white;
     font-size: 18px;
 

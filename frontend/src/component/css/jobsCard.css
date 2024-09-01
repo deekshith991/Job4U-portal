@@ -34,10 +34,10 @@
 
 /* Style for the job details section */
 .JobDetails {
-    padding: 15px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 2px;
 }
 
 /* Style for the buttons */
@@ -128,5 +128,9 @@
 #companyname,
 #companydetails {
     margin: 0;
-    font-size: medium;
+    /* font-size: medium; */
+}
+
+#companyname {
+    font-weight: 700;
 }

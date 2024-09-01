@@ -8,10 +8,10 @@ const JobCard = ({ companyName, position, salary, lastDate }) => {
             </div>
 
             <div className="JobDetails">
-                <h3 id='companyname' >Company Name: {companyName}</h3>
-                <h4 id='companydetails' >Position: {position}</h4>
-                <h4 id='companydetails' >Salary: ${salary}</h4> {/* Added currency symbol for better clarity */}
-                <h4 id='companydetails' >Last Date: {lastDate}</h4>
+                <h5 id='companyname' >Company Name: {companyName}</h5>
+                <p id='companydetails' >Position: {position}</p>
+                <p id='companydetails' >Salary: ${salary}</p> {/* Added currency symbol for better clarity */}
+                <p id='companydetails' >Last Date: {lastDate}</p>
 
                 <div className="button-group">
                     <button disabled className="ApplyBtn">View More</button>

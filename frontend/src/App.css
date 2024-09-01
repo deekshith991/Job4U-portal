@@ -8,14 +8,14 @@
     box-sizing: border-box;
 }
 
-h1 {
+/* h1 {
     font-size: 2.0rem;
 }
 
 h5 {
-    font-size: medium;
+    font-size: medium; 
 }
-
+*/
 .Input {
     padding: 10px;
     padding-top: 0;
@@ -53,4 +53,8 @@ form {
 #default-disabled-input:disabled {
     opacity: 1;
 
+}
+
+h5 {
+    font-size: medium;
 }
