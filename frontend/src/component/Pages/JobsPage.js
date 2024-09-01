@@ -12,7 +12,6 @@ const JobsPage = () => {
             <div><Header /></div>
 
             <div className="ContentView">
-                <h1> jobs </h1>
                 <div><JobLists /></div>
             </div>
 

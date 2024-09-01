@@ -1,0 +1,104 @@
+/* JobCard.css */
+
+/* Style for each JobCard */
+.JobCard {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    border: 1px solid #f2bfbf;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.JobCard:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Container for the company picture and job details */
+.CompanyPic {
+    flex-shrink: 0;
+}
+
+.CompanyPic img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#companyname {
+    margin: 0;
+}
+
+#companydetails {
+    margin: 0px;
+}
+
+/* Style for the job details section */
+.JobDetails {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Style for the buttons */
+.button-group {
+    margin-top: 10px;
+}
+
+.ApplyBtn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 5px;
+    transition: background-color 0.2s;
+}
+
+.ApplyBtn:hover {
+    background-color: #0056b3;
+}
+
+.ApplyBtn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Flex container for job cards */
+.JobCardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Space between cards */
+    justify-content: center;
+}
+
+/* Responsive layout for job cards */
+@media (min-width: 600px) {
+    .JobCard {
+        flex-direction: row;
+    }
+
+    .JobDetails {
+        flex: 1;
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .JobCard {
+        flex-direction: column;
+    }
+
+    .JobDetails {
+        padding: 15px;
+    }
+}
