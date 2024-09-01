@@ -1,0 +1,136 @@
+/* Style for each JobCard */
+.JobCard {
+    display: flex;
+    flex-direction: column;
+    /* Default to column layout */
+    max-width: 400px;
+    border: 1px solid #f2bfbf;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.JobCard:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Container for the company picture and job details */
+.CompanyPic {
+    width: 100%;
+    /* Ensure it takes the full width of its container */
+}
+
+.CompanyPic img {
+    width: 100%;
+    /* Image spans the full width of its container */
+    height: auto;
+    /* Maintain aspect ratio */
+    display: block;
+}
+
+/* Style for the job details section */
+.JobDetails {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/* Style for the buttons */
+.button-group {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.ApplyBtn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 5px;
+    transition: background-color 0.2s;
+}
+
+.ApplyBtn:hover {
+    background-color: #0056b3;
+}
+
+.ApplyBtn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Flex container for job cards */
+.JobCardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Responsive layout for job cards */
+@media (min-width: 600px) {
+    .JobCard {
+        flex-direction: row;
+        /* Switch to row layout on larger screens */
+    }
+
+    .CompanyPic {
+        width: 150px;
+        /* Fixed width for images in row layout */
+    }
+
+    .JobDetails {
+        flex: 1;
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 599px) {
+    .JobCard {
+        flex-direction: column;
+        /* Column layout for small screens */
+    }
+
+    .CompanyPic {
+        width: 100%;
+        /* Image takes full width in column layout */
+    }
+
+    .JobDetails {
+        padding: 15px;
+    }
+}
+
+/* Additional styles for very small screens (e.g., phones in portrait mode) */
+@media (max-width: 400px) {
+    .JobCard {
+        margin: 5px;
+        /* Reduce margin for very small screens */
+    }
+
+    .ApplyBtn {
+        font-size: 12px;
+        /* Smaller font size for buttons */
+        padding: 6px 10px;
+        /* Adjust padding for smaller screens */
+    }
+}
+
+#companyname,
+#companydetails {
+    margin: 0;
+    /* font-size: medium; */
+}
+
+#companyname {
+    font-weight: 700;
+}

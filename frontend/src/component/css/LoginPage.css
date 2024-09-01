@@ -1,0 +1,26 @@
+.baseformpage {
+
+    background-color: transparent;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.baseCard {
+    padding: 20px;
+    background-color: rgb(234, 229, 229);
+    max-width: 500px;
+
+    border-radius: 25px;
+}
+
+.loginform,
+.userprofileform,
+.companyprofileform,
+.registerform,
+.jobform {
+    /* background-color: red; */
+    max-width: 350px;
+}

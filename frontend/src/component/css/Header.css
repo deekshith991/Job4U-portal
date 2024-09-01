@@ -1,7 +1,7 @@
-.HeaderSec {
+.Header {
     background-color: rgb(158, 236, 236);
     width: 100vw;
-    height: 80px;
+    height: 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -10,8 +10,8 @@
     margin: 0;
 }
 
-.HeaderSec .leftSec,
-.HeaderSec .rightSec {
+.Header .leftSec,
+.Header .rightSec {
     display: flex;
     align-items: center;
 }
@@ -23,5 +23,14 @@
     background-color: white;
     margin: 0 10px;
     border-radius: 50%;
-    border: 2px solid black;
+    border: 2px solid transparent;
+}
+
+.Footer {
+
+    background-color: rgb(130, 32, 32);
+
+    display: flex;
+    padding: 5px;
+
 }

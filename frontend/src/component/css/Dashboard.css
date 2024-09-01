@@ -1,0 +1,32 @@
+
+.dashboardpage{
+    display: flex;
+    flex-direction: column;
+}
+
+#title{
+    text-align: center;
+    width: 100%;
+}
+.jobform{
+    max-width: 350px;
+    background-color: transparent;
+}
+
+.top-section{
+    display: flex;
+    width: 100vw;
+}
+
+.right-section{
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 75%;
+    background-color: transparent;
+}
+
+.bottom-section{
+    display: flex;
+}

@@ -1,9 +1,11 @@
-import { useAuth } from '../services/AuthContext'
+// import css 
+import '../css/LoginPage.css';
 import { useState } from 'react';
-import { PostJob } from '../services/CompanyService';
+import { useAuth } from '../service/AuthContext';
+import { PostJob } from '../service/CompanyService';
 
 
-const IssueJob = () => {
+const ListJob = () => {
 
     const { authData } = useAuth();
 
@@ -26,11 +28,20 @@ const IssueJob = () => {
         console.log(JobData);
         const resp = await PostJob(JobData);
 
-        // console.log(resp);
+        if (resp.success) {
+            alert("Job issued");
+            setJobData({
+                position: "",
+                salary: "",
+                lastDate: "",
+                jd: ""
+            });
+        }
+
     }
 
     return (
-        <div className="IssueJob">
+        <div className="jobform">
             <form onSubmit={handlesubmit}>
                 <div className="Input">
                     <label>Position :</label>
@@ -58,4 +69,4 @@ const IssueJob = () => {
     )
 }
 
-export default IssueJob;
+export default ListJob;

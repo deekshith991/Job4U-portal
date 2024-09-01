@@ -1,13 +1,11 @@
 import axios from "axios";
-
-const api_url = "https://job4-u-portal.vercel.app"; // vercel live code ..
-//const api_url = "http://localhost:3333";
+import { API_URL } from "./AuthContext";
 
 export const UserProfileUpdate = async (data) => {
 
     try {
 
-        const response = await axios.post(`${api_url}/api/users/profile`, data);
+        const response = await axios.post(`${API_URL}/api/users/profile`, data);
 
         console.log(response.data);
         return response.data;
@@ -22,7 +20,7 @@ export const getJobs = async () => {
 
     try {
 
-        const response = await axios.get(`${api_url}/api/jobs`);
+        const response = await axios.get(`${API_URL}/api/jobs`);
 
         // console.log(response.data);
         return response.data;

@@ -1,40 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import JobCard from "../Sections/JobCard";
-import { useAuth } from '../services/AuthContext';
-import axios from 'axios';
+import '../css/jobsCard.css';
+import { useState, useEffect } from 'react';
+import JobCard from './JobCard';
+import { getJobs } from '../service/UserService';
 
-const CardDisplayer = () => {
+const JobLists = () => {
 
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const { authData, API_URL } = useAuth();
-
-    const getJobsss = async () => {
-
-        try {
-            let data = "";
-            if (authData.account === "Employer") {
-                data = authData.uid;
-            }
-
-            const response = await axios.get(`${API_URL}/api/jobs`, data);
-
-            // console.log("get", response.data);
-            return response.data;
-
-        } catch (error) {
-            console.log(error);
-            console.log("error in getJobs api func");
-        }
-    }
-
-
     useEffect(() => {
         const fetchJobs = async () => {
             try {
-                const jobsData = await getJobsss();
+                const jobsData = await getJobs();
                 // console.log("eff", jobsData);
                 setJobs(jobsData);
             } catch (err) {
@@ -51,7 +29,7 @@ const CardDisplayer = () => {
     if (error) return <p>{error}</p>;
 
     return (
-        <div className="Gallery">
+        <div className="JobCardsContainer">
             {jobs.length > 0 ? (
                 jobs.map(job => (
                     <JobCard
@@ -66,7 +44,7 @@ const CardDisplayer = () => {
                 <p>No jobs available.</p>
             )}
         </div>
-    );
-};
+    )
+}
 
-export default CardDisplayer;
+export default JobLists;
