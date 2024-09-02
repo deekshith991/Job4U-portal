@@ -1,14 +1,6 @@
 const mongoose = require("mongoose");
 
 const JobSchema = mongoose.Schema({
-  jid: {
-    type: String,
-    required: true,
-    unique: true, // Ensure that jid is unique
-    default: function () {
-      return new mongoose.Types.ObjectId(); // Optionally generate a default ObjectId if needed
-    }
-  },
   uid: {
     type: mongoose.SchemaTypes.ObjectId,
   },
@@ -22,10 +14,7 @@ const JobSchema = mongoose.Schema({
     type: Number,
   },
   lastDate: {
-    type: Date,
-  },
-  jd: {
-    type: String,
+    type:String,
   },
   createdAt: {
     type: Date,
