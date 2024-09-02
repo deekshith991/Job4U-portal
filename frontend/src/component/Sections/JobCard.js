@@ -1,4 +1,5 @@
 import React from 'react';
+import JobBtns from './JobBtns';
 
 const JobCard = ({ companyName, position, salary, lastDate }) => {
     return (
@@ -14,8 +15,7 @@ const JobCard = ({ companyName, position, salary, lastDate }) => {
                 <p id='companydetails' >Last Date: {lastDate}</p>
 
                 <div className="button-group">
-                    <button disabled className="ApplyBtn">View More</button>
-                    <button disabled className="ApplyBtn">Apply</button>
+                    <JobBtns />
                 </div>
 
             </div>
