@@ -8,7 +8,7 @@ router.get("/jobs", async (req, res) => {
     try {
 
         const jobsJSON = await jobs.find();
-        console.log(jobsJSON);
+        //console.log(jobsJSON);
         res.json(jobsJSON).status(200);
 
     } catch (error) {
