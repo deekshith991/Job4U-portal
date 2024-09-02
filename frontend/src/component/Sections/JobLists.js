@@ -34,7 +34,7 @@ const JobLists = () => {
                 jobs.map(job => (
                     <JobCard
                         key={job._id}
-                        companyName={job.companyName || "Unknown Company"}
+                        companyName={job.company || "Unknown Company"}
                         position={job.position || "No Position"}
                         salary={job.salary || " N/A"}
                         lastDate={job.lastDate || "No Deadline"}

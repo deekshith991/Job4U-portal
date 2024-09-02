@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
     );
 };
 
-//export const API_URL = "http://localhost:3333";
-export const API_URL = "https://job4-u-portal.vercel.app"; // vercel live code ..
+export const API_URL = "http://localhost:3333";
+//export const API_URL = "https://job4-u-portal.vercel.app"; // vercel live code ..
 
 export const useAuth = () => useContext(AuthContext);
