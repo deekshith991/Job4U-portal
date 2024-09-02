@@ -1,10 +1,18 @@
-const express = require('express')
+const express = require('express');
 const router = express.Router();
+const UserProfileDataModel = require('../../Models/UserProfileDataModel');
 
 const UserData = require('../../Models/UserProfileDataModel');
 
-router.get('/profile', async (req, res) => {
-    res.send("hello");
+router.get('/profile/:id', async (req, res) => {
+    try{
+        const uid = req.params.id;
+        const UserProfiles = await UserProfileDataModel.findOne({uid:uid});
+        res.json(UserProfiles).status(200);
+    } catch( error){
+        console.log(error,"\n");
+        res.json({success:false,msg:"Error at server"}).status(400);
+    }
 });
 
 router.post('/profile', async (req, res) => {
