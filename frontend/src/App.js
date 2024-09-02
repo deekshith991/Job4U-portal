@@ -7,7 +7,7 @@ import RegisterPage from './component/Pages/RegisterPage';
 import FormPage from './component/Pages/FormPage';
 import JobsPage from './component/Pages/JobsPage';
 import DashBoard from './component/Pages/DashBoard';
-
+import ApplicationsPage from './component/Pages/ApplicationsPage';
 
 
 function App() {
@@ -36,7 +36,8 @@ function App() {
                         <Route path='/setprofile' element={<FormPage />} />
                         <Route path='/jobs' element={<JobsPage />} />
                         <Route path='/dashboard' element={<DashBoard />} />
-                    </Routes>)
+                        <Route path='/applications' element={<ApplicationsPage/>} />
+                        </Routes>)
                 }
 
             </Router>

@@ -94,12 +94,15 @@ const UserNav = () => {
     const Gotohome = () => {
         navigate('/home');
     }
+    const GotoApplications = () => {
+        navigate('/applications');
+    }
 
     return (
         <div className="NavigationBar">
             <Buttons onClick={Gotohome}>Home</Buttons>
             <Buttons onClick={GotoJobs}>Gallery</Buttons>
-            <Buttons >DashBoard</Buttons>
+            <Buttons onClick={GotoApplications}>DashBoard</Buttons>
             <Buttons onClick={LogOut}>Log Out</Buttons>
         </div>
     );
