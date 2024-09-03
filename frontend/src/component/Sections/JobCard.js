@@ -1,26 +1,28 @@
 import React from 'react';
+import JobBtns from './JobBtns';
 
-const JobCard = ({ companyName, position, salary, lastDate }) => {
+const JobCard = ({ jobData, onViewMore, onBack }) => {
+    const { company, position, salary, lastDate } = jobData; // Destructure the job data
+
     return (
-        <div className="JobCard">
+        <div className="JobCard" style={{ width: onBack ? '100%' : 'auto' }}> {/* Expand card if onBack is provided */}
             <div className="CompanyPic">
                 <img src="logo192.png" alt="Company Logo" />
             </div>
 
             <div className="JobDetails">
-                <h5 id='companyname' >Company Name: {companyName}</h5>
-                <p id='companydetails' >Position: {position}</p>
-                <p id='companydetails' >Salary: ${salary}</p> {/* Added currency symbol for better clarity */}
-                <p id='companydetails' >Last Date: {lastDate}</p>
+                <h5 id='companyname'>Company Name: {company || "Unknown Company"}</h5>
+                <p id='companydetails'>Position: {position || "No Position"}</p>
+                <p id='companydetails'>Salary: ${salary || "N/A"}</p>
+                <p id='companydetails'>Last Date: {lastDate || "No Deadline"}</p>
 
                 <div className="button-group">
-                    <button disabled className="ApplyBtn">View More</button>
-                    <button disabled className="ApplyBtn">Apply</button>
+                    <JobBtns onViewMore={onViewMore} onBack={onBack} /> {/* Pass both onViewMore and onBack */}
                 </div>
-
             </div>
         </div>
     );
 };
 
 export default JobCard;
+
