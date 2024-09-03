@@ -13,11 +13,11 @@ const JobSchema = mongoose.Schema({
   salary: {
     type: Number,
   },
-    jd:{
-    type:String,
+  jid: {
+    type: String,
   },
   lastDate: {
-    type:String,
+    type: String,
   },
   createdAt: {
     type: Date,
