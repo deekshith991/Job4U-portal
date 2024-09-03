@@ -15,6 +15,8 @@ const JobSchema = mongoose.Schema({
   },
   jid: {
     type: String,
+    unique: true,
+    required: true, 
   },
   salary: {
     type: Number,
