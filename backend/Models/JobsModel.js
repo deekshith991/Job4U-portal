@@ -10,6 +10,12 @@ const JobSchema = mongoose.Schema({
   position: {
     type: String,
   },
+  jd: {
+    type: String,
+  },
+  jid: {
+    type: String,
+  },
   salary: {
     type: Number,
   },
