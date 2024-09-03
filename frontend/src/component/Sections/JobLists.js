@@ -2,6 +2,7 @@ import '../css/jobsCard.css';
 import { useState, useEffect } from 'react';
 import JobCard from './JobCard';
 import { getJobs } from '../service/UserService';
+import JobDisplay from './JobDisplay.js';
 
 const JobLists = () => {
     const [jobs, setJobs] = useState([]);
@@ -31,11 +32,7 @@ const JobLists = () => {
     if (selectedJob) {
         return (
             <div className="JobCardsContainer">
-                <JobCard
-                    key={selectedJob._id}
-                    jobData={selectedJob} // Pass the entire job data
-                    onBack={() => setSelectedJob(null)} // Back button resets selected job
-                />
+                <JobDisplay jobData={selectedJob} onBack={()=> setSelectedJob(null)} />
             </div>
         );
     }
