@@ -13,7 +13,7 @@ const JobSchema = mongoose.Schema({
   salary: {
     type: Number,
   },
-  jid: {
+  jd: {
     type: String,
   },
   lastDate: {
