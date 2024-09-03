@@ -52,13 +52,12 @@ router.post("/post", async (req, res) => {
             salary,
             lastDate,
             jd,
-            jid
         } = req.body;
 
         /* company name fetch system should be added here*/
         const companydata = await CompanyProfile.findOne({ uid: uid });
         const company = companydata.name;
-
+        const jid = `job_${new Date().getTime()}`;
         const data = new Jobs({
             uid,
             company,
