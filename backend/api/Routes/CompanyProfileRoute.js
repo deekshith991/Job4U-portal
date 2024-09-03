@@ -51,7 +51,8 @@ router.post("/post", async (req, res) => {
             position,
             salary,
             lastDate,
-            jd
+            jd,
+            jid
         } = req.body;
 
         /* company name fetch system should be added here*/
@@ -64,7 +65,8 @@ router.post("/post", async (req, res) => {
             position,
             salary,
             lastDate,
-            jd
+            jd,
+            jid
         });
 
         await data.save();
@@ -74,7 +76,7 @@ router.post("/post", async (req, res) => {
     } catch (error) {
         console.log(error);
         console.log("Error at Job post route");
-        return res.json({ success: false, message: "error job post","error":error}).status(500);
+        return res.json({ success: false, message: "error job post", "error": error }).status(500);
     }
 
 })
